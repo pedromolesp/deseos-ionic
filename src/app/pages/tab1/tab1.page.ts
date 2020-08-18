@@ -36,10 +36,11 @@ export class Tab1Page {
           handler: (data) => {
             if (data.titulo.length === 0) {
               return;
-            } else {
-              this.deseosService.crearLista(data.titulo);
             }
-            console.log(data);
+            const id = this.deseosService.crearLista(data.titulo);
+            this.router.navigateByUrl(`/tabs/tab1/agregar/${id}`);
+
+
           }
         }
       ]
